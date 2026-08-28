@@ -1,0 +1,7 @@
+<resources>
+    <string-array name="xposed_scope">
+        <item>com.oculus.panelapp.settings</item>
+        <item>com.oculus.vrshell</item>
+        <item>com.oculus.systemux</item>
+    </string-array>
+</resources>
