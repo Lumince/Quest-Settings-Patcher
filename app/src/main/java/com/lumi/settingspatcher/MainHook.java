@@ -176,6 +176,7 @@ public class MainHook implements IXposedHookLoadPackage {
                 "com.oculus.vrshell.input.DoubleTapSensor", "access$000"));
         VRSHELL_VERSION_CONFIGS.put(996826886, new VrShellConfig("X.06u", "A00", "X.06t", "A00"));
         VRSHELL_VERSION_CONFIGS.put(1009732165, new VrShellConfig("X.07o", "A00", "X.07n", "A00"));
+        VRSHELL_VERSION_CONFIGS.put(998228807, new VrShellConfig("X.07o", "A00", "X.07n", "A00"));
         VRSHELL_VERSION_CONFIGS.put(1026370745, new VrShellConfig("X.05N", "A00", "X.05M", "A00"));
         VRSHELL_VERSION_CONFIGS.put(1028758766, new VrShellConfig("X.08B", "A00", "X.08A", "A00"));
 
@@ -214,6 +215,7 @@ public class MainHook implements IXposedHookLoadPackage {
                 null,
                 null, null);
         VERSION_CONFIGS.put(673301462, v205);
+        VERSION_CONFIGS.put(673301368, v205);
 
         VersionConfig v204 = new VersionConfig(
                 "X.1qV", "A00", "X.10C",
