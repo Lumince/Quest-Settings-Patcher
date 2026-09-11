@@ -7,8 +7,8 @@ Unhides Passthrough, Home, and Travel Mode. Hides Meta AI section if toggle is d
 * Lsposed/Vector installed and active in magisk
 
 # How to use
-1. If your quest headset isn't rooted and its on a supported firmware for rooting, do so with [Singularity](https://github.com/Lumince/singularity/releases/tag/v1.0.5)
-2. Open Magisk Manager and install the latest [Vector](https://github.com/JingMatrix/Vector/releases/tag/v2.2) magisk module
+1. If your quest headset isn't rooted and its on a supported firmware for rooting, do so with [Singularity](https://github.com/Lumince/singularity/releases/)
+2. Open Magisk Manager and install the latest stable [Vector](https://github.com/JingMatrix/Vector/releases/) magisk module
 3. Check to make sure that Magisk shows `Zygisk: Yes` in the main page, if it is, reboot your device and go to step 5
 4. If `Zygisk: Yes` isn't displayed in Magisk, go into settings and disable, then enable Zygisk. Then open Singularity, go to AIO Tweaks > Utils > Fix Magisk Zygisk > Apply
 5. Root your device again, and install SettingsPatcher.apk
