@@ -102,6 +102,7 @@ public class MainActivity extends Activity {
         }
 
         setContentView(root);
+        requestRoot();
     }
 
     // ── Card content builder ─────────────────────────────────────────────────
@@ -149,6 +150,15 @@ public class MainActivity extends Activity {
     }
 
     // ── Helpers ──────────────────────────────────────────────────────────────
+
+    private void requestRoot() {
+        new Thread(() -> {
+            try {
+                Process su = Runtime.getRuntime().exec(new String[]{"su", "-c", "echo ok"});
+                su.waitFor();
+            } catch (Exception ignored) {}
+        }).start();
+    }
 
     private void killWithRoot(String pkg) {
         new Thread(() -> {
