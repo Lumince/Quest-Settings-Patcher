@@ -2,7 +2,7 @@
 Unhides Home and Travel Mode in Settings. Hides Meta AI section if toggle is disabled. Stops VrShell from re-enabling passthrough via double-tap when it's turned off.
 
 ## Requirements
-* Rooted Meta Quest Headset (Pre-August 4th 2026 firmware)
+* Rooted Meta Quest Headset ((Pre-September 24th 2026 firmware))
 * Magisk w/ Zygisk: Yes
 * LSPosed/Vector installed and active in Magisk
 
