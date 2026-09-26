@@ -13,7 +13,7 @@ Unhides Home and Travel Mode in Settings. Hides Meta AI section if toggle is dis
 4. If `Zygisk: Yes` isn't shown, go into Magisk settings and toggle Zygisk off then on. Then open Singularity → AIO Tweaks → Utils → Fix Magisk Zygisk → Apply
 5. Root your device again and install `SettingsPatcher.apk`
 6. Open Vector, enable Settings Patcher, and select the 3 apps it prompts you to scope
-7. Open Settings Patcher, press both `kill process` buttons (accept magisk root prompt), and open settings
+7. Open Settings Patcher, accept magisk root propmt, and press both `kill process` buttons
 
 ## App UI
 Opening Settings Patcher shows your device build incremental, whether each app is on a supported version, and a **Kill Process** button for Settings and VrShell. The kill buttons use root (`am force-stop`) — Magisk will prompt for root access the first time.
