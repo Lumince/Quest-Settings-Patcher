@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Needed on Android 11+ to query installed version codes of the target apps -->
+    <queries>
+        <package android:name="com.oculus.panelapp.settings" />
+        <package android:name="com.oculus.vrshell" />
+    </queries>
+
     <application
         android:label="Settings Patcher"
         android:allowBackup="false"
         android:hasCode="true">
 
-        <meta-data
-            android:name="xposedmodule"
-            android:value="true" />
-        <meta-data
-            android:name="xposedminversion"
-            android:value="53" />
-        <meta-data
-            android:name="xposeddescription"
-            android:value="Unhides Passthrough, Home, and travel mode in Settings. Hides Meta AI" />
-        <meta-data
-            android:name="xposedscope"
-            android:resource="@array/xposed_scope" />
-    </application>
+        <meta-data android:name="xposedmodule"      android:value="true" />
+        <meta-data android:name="xposedminversion"  android:value="53" />
+        <meta-data android:name="xposeddescription" android:value="Unhides Home and travel mode in Settings. Hides Meta AI. Stops VrShell passthrough re-enable." />
+        <meta-data android:name="xposedscope"       android:resource="@array/xposed_scope" />
 
+        <activity
+            android:name=".MainActivity"
+            android:label="Settings Patcher"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
 </manifest>
