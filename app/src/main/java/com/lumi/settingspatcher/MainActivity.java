@@ -26,23 +26,26 @@ public class MainActivity extends Activity {
     private static final String VRSHELL_PKG  = "com.oculus.vrshell";
 
     private static final Set<Integer> SUPPORTED_SETTINGS_VERSIONS = new HashSet<>(Arrays.asList(
-            665903155,                    // v81
-            671701082, 671701119,         // v203 pro
-            672201326,                    // v204
-            673301368, 673301462,         // v205
-            674401129, 674401131,         // v206
-            675101053, 675101304          // v207
+            665903155,                                        // v81
+            671701082, 671701119,                             // v203 pro
+            672201326,                                        // v204
+            673301368, 673301462,                             // v205
+            674401129, 674401131,                             // v206
+            675101053,                                        // v207 Q2+Q3
+            675101304, 675101311, 675101221, 675101195, 675101172 // v207 / 3s / Pro
     ));
 
     private static final Set<Integer> SUPPORTED_VRSHELL_VERSIONS = new HashSet<>(Arrays.asList(
-            949708223,
-            996826886,
-            998228807,
-            1009732165,
-            1026370745,
-            1026630909,
-            1028758766,
-            1051347662
+            949708223,                         // v203 Q2/Q3/Pro
+            996826886,                         // v204 Q2/Q3/Pro
+            998228807,                         // v205 Q2
+            1009732165,                        // v205 Q2/Q3/3s/Pro
+            1026370745,                        // v206 Pro
+            1026630909,                        // v206 Q2/Q3/3s
+            1028758766,                        // v207 Q2/Q3
+            1051347662, 1051657337,            // v207-latest Q3/Pro, Q2
+            1039989429, 1042715439,            // v207 3s, v207 3s
+            1037766809                         // v207 Pro
     ));
 
     private static final int COLOR_BG       = Color.parseColor("#0F0F1A");

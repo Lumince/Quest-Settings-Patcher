@@ -120,25 +120,41 @@ public class MainHook implements IXposedHookLoadPackage {
     static {
         VRSHELL_VERSION_CONFIGS.put(949708223, new VrShellConfig(
                 "com.oculus.vrshell.input.DoubleTapSensor$1", "this$0",
-                "com.oculus.vrshell.input.DoubleTapSensor", "access$000"));
-        VRSHELL_VERSION_CONFIGS.put(996826886,  new VrShellConfig("X.06u", "A00", "X.06t", "A00"));
-        VRSHELL_VERSION_CONFIGS.put(1009732165, new VrShellConfig("X.07o", "A00", "X.07n", "A00"));
-        VRSHELL_VERSION_CONFIGS.put(998228807,  new VrShellConfig("X.07o", "A00", "X.07n", "A00"));
-        VRSHELL_VERSION_CONFIGS.put(1026630909, new VrShellConfig("X.05N", "A00", "X.05M", "A00"));
-        VRSHELL_VERSION_CONFIGS.put(1026370745, new VrShellConfig("X.05N", "A00", "X.05M", "A00"));
-        VRSHELL_VERSION_CONFIGS.put(1028758766, new VrShellConfig("X.08B", "A00", "X.08A", "A00"));
-        VRSHELL_VERSION_CONFIGS.put(1051347662, new VrShellConfig("X.08B", "A00", "X.08A", "A00"));
+                "com.oculus.vrshell.input.DoubleTapSensor", "access$000")); // v203 Q2/Q3/Pro
+        VRSHELL_VERSION_CONFIGS.put(996826886,  new VrShellConfig("X.06u", "A00", "X.06t", "A00")); // v204 Q2/Q3/Pro
+        VRSHELL_VERSION_CONFIGS.put(1009732165, new VrShellConfig("X.07o", "A00", "X.07n", "A00")); // v205 Q2/Q3/3s/Pro
+        VRSHELL_VERSION_CONFIGS.put(998228807,  new VrShellConfig("X.07o", "A00", "X.07n", "A00")); // v205 Q2
+        VRSHELL_VERSION_CONFIGS.put(1026630909, new VrShellConfig("X.05N", "A00", "X.05M", "A00")); // v206 Q2/Q3/3s
+        VRSHELL_VERSION_CONFIGS.put(1026370745, new VrShellConfig("X.05N", "A00", "X.05M", "A00")); // v206 Pro
+        VRSHELL_VERSION_CONFIGS.put(1028758766, new VrShellConfig("X.08B", "A00", "X.08A", "A00")); // v207 Q2/Q3
+        VRSHELL_VERSION_CONFIGS.put(1051347662, new VrShellConfig("X.08B", "A00", "X.08A", "A00")); // v207 Q3/Pro
+        VRSHELL_VERSION_CONFIGS.put(1051657337, new VrShellConfig("X.08B", "A00", "X.08A", "A00")); // v207 Q2
+        VRSHELL_VERSION_CONFIGS.put(1039989429, new VrShellConfig("X.08B", "A00", "X.08A", "A00")); // v207 3s
+        VRSHELL_VERSION_CONFIGS.put(1042715439, new VrShellConfig("X.08B", "A00", "X.08A", "A00")); // v207 3s
+        VRSHELL_VERSION_CONFIGS.put(1037766809, new VrShellConfig("X.08B", "A00", "X.08A", "A00")); // v207 Pro
     }
 
     private static final Map<Integer, VersionConfig> VERSION_CONFIGS = new HashMap<>();
     static {
+        // v207 base (Q2/Q3 only)
         VersionConfig v207 = new VersionConfig(
                 "X.0aG", "A00", "X.0b7",
                 "X.0ZV", "X.0aH", "A0E",
                 "X.0aL", "A06",
                 null);
-        VERSION_CONFIGS.put(675101053, v207);
-        VERSION_CONFIGS.put(675101304, v207);
+        VERSION_CONFIGS.put(675101053, v207); // Q2+Q3 v207
+
+        // v207-latest + 3s/Pro v207 (shifted obfuscation)
+        VersionConfig v207latest = new VersionConfig(
+                "X.0aH", "A00", "X.0b8",
+                "X.0ZW", "X.0aI", "A0E",
+                "X.0aM", "A06",
+                null);
+        VERSION_CONFIGS.put(675101304, v207latest); // Q3/Pro v207
+        VERSION_CONFIGS.put(675101311, v207latest); // Q2 v207
+        VERSION_CONFIGS.put(675101221, v207latest); // 3s v207
+        VERSION_CONFIGS.put(675101195, v207latest); // 3s v207
+        VERSION_CONFIGS.put(675101172, v207latest); // Pro v207
 
         VersionConfig v206 = new VersionConfig(
                 "X.0Nk", "A00", "X.10U",
