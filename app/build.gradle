@@ -10,8 +10,8 @@ android {
         applicationId "com.lumi.settingspatcher"
         minSdk 27
         targetSdk 34
-        versionCode 7
-        versionName "1.0.3.3"
+        versionCode 8
+        versionName "1.0.3.4"
     }
 
     buildTypes {
