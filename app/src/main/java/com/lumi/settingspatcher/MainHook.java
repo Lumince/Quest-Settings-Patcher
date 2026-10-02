@@ -199,6 +199,7 @@ public class MainHook implements IXposedHookLoadPackage {
         Log.i(TAG, "Loaded into " + lpparam.packageName + " (pid=" + android.os.Process.myPid() + ")");
 
         installPreferenceHooks(lpparam);
+        installHorizonOsPreferenceHook(lpparam);
 
         if (!SETTINGS_PACKAGE.equals(lpparam.packageName)) {
             if (VRSHELL_PACKAGE.equals(lpparam.packageName)) {
@@ -423,6 +424,36 @@ public class MainHook implements IXposedHookLoadPackage {
             Log.i(TAG, "PREF: hooked " + PREF_MANAGER_CLASS + ".getInteger(String)");
         } catch (Throwable t) {
             Log.e(TAG, "Failed to hook " + PREF_MANAGER_CLASS + " - /travel_mode won't be forced this run.", t);
+        }
+    }
+
+    /** Quick Settings Travel Mode tile. **/
+    private void installHorizonOsPreferenceHook(LoadPackageParam lpparam) {
+        try {
+            Class<?> cls = lpparam.classLoader.loadClass("horizonos.os.preferences.PreferencesManager");
+            int n = 0;
+            for (java.lang.reflect.Method m : cls.getDeclaredMethods()) {
+                if (!m.getName().equals("getInt")) continue;
+                Class<?>[] pt = m.getParameterTypes();
+                if (pt.length != 1 || pt[0] != String.class || m.getReturnType() != int.class) continue;
+                XposedBridge.hookMethod(m, new XC_MethodHook() {
+                    @Override
+                    protected void afterHookedMethod(MethodHookParam param) {
+                        if (FORCE_INT_ONE_PREF.equals(param.args[0])) {
+                            param.setResult(Integer.valueOf(1));
+                        }
+                    }
+                });
+                n++;
+            }
+            Log.i(TAG, "PREF: hooked horizonos.os.preferences.PreferencesManager.getInt(String) x" + n
+                    + " in " + lpparam.packageName + " (Quick Settings Travel Mode tile)");
+        } catch (ClassNotFoundException e) {
+            Log.i(TAG, "PREF: horizonos.os.preferences.PreferencesManager not present in "
+                    + lpparam.packageName + " - skipping Quick Settings tile hook");
+        } catch (Throwable t) {
+            Log.e(TAG, "PREF: failed to hook horizonos PreferencesManager - Quick Settings "
+                    + "Travel Mode tile won't be forced this run.", t);
         }
     }
 
