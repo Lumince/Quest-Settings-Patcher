@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
             671701082, 671701119,                             // v203 pro
             672201326,                                        // v204
             673301368, 673301462,                             // v205
-            674401129, 674401131,                             // v206
+            674401129, 674401131, 674401169,                   // v206
             675101053,                                        // v207 Q2+Q3
             675101304, 675101311, 675101221, 675101195, 675101172 // v207 / 3s / Pro
     ));
@@ -45,7 +45,8 @@ public class MainActivity extends Activity {
             1028758766,                        // v207 Q2/Q3
             1051347662, 1051657337,            // v207-latest Q3/Pro, Q2
             1039989429, 1042715439,            // v207 3s, v207 3s
-            1037766809                         // v207 Pro
+            1037766809,                        // v207 Pro
+            1032932075                         // v207 Pro
     ));
 
     private static final int COLOR_BG       = Color.parseColor("#0F0F1A");

@@ -132,6 +132,7 @@ public class MainHook implements IXposedHookLoadPackage {
         VRSHELL_VERSION_CONFIGS.put(1039989429, new VrShellConfig("X.08B", "A00", "X.08A", "A00")); // v207 3s
         VRSHELL_VERSION_CONFIGS.put(1042715439, new VrShellConfig("X.08B", "A00", "X.08A", "A00")); // v207 3s
         VRSHELL_VERSION_CONFIGS.put(1037766809, new VrShellConfig("X.08B", "A00", "X.08A", "A00")); // v207 Pro
+        VRSHELL_VERSION_CONFIGS.put(1032932075, new VrShellConfig("X.08B", "A00", "X.08A", "A00")); // v207 Pro
     }
 
     private static final Map<Integer, VersionConfig> VERSION_CONFIGS = new HashMap<>();
@@ -163,6 +164,7 @@ public class MainHook implements IXposedHookLoadPackage {
                 "A01");
         VERSION_CONFIGS.put(674401129, v206);
         VERSION_CONFIGS.put(674401131, v206);
+        VERSION_CONFIGS.put(674401169, v206);
 
         VersionConfig v205 = new VersionConfig(
                 "X.0UY", "A00", "X.0Wf",
