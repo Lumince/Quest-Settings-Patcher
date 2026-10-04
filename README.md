@@ -15,6 +15,12 @@ Unhides Home and Travel Mode in Settings. Hides Meta AI section if toggle is dis
 6. Open Vector, enable Settings Patcher, and select the 3 apps it prompts you to scope
 7. Open Settings Patcher, accept magisk root propmt, and press both `kill process` buttons
 
+## Trouble finding target apps?
+Tap on the module \
+Press this \
+<img width="70" height="52" alt="image" src="https://github.com/user-attachments/assets/ac4ebcfc-15e5-486c-a0fd-f6d4bdc05768" /> \
+Then select this \
+<img width="375" height="74" alt="image" src="https://github.com/user-attachments/assets/e895b82b-1292-40c4-a91d-7e34716a899d" />
 ## App UI
 Opening Settings Patcher shows your device build incremental, whether each app is on a supported version, and a **Kill Process** button for Settings and VrShell. The kill buttons use root (`am force-stop`) — Magisk will prompt for root access the first time.
 
